@@ -59,35 +59,24 @@ int main() {
     int towingCapacity;
 
     // Test Vehicle
-    cout << "Enter the manufacturer for the Vehicle: ";
-    getline(cin, manufacturer);
-    cout << "Enter the year the Vehicle was built: ";
-    cin >> yearBuilt;
-    cin.ignore();  // Ignore newline character
+    manufacturer = getValidatedManufacturer();
+    yearBuilt = getValidatedInt("Enter the year the Vehicle was built: ");
     Vehicle vehicle(manufacturer, yearBuilt);
     cout << "\nVehicle Information:\n";
     vehicle.displayInfo();
 
     // Test Car
-    cout << "\nEnter the manufacturer for the Car: ";
-    getline(cin, manufacturer);
-    cout << "Enter the year the Car was built: ";
-    cin >> yearBuilt;
-    cout << "How many doors does the Car have? ";
-    cin >> numberOfDoors;
-    cin.ignore();  // Ignore newline character
+    manufacturer = getValidatedManufacturer();
+    yearBuilt = getValidatedInt("Enter the year the Car was built: ");
+    numberOfDoors = getValidatedInt("How many doors does the Car have? ");
     Car car(manufacturer, yearBuilt, numberOfDoors);
     cout << "\nCar Information:\n";
     car.displayInfo();
 
     // Test Truck
-    cout << "\nEnter the manufacturer for the Truck: ";
-    getline(cin, manufacturer);
-    cout << "Enter the year the Truck was built: ";
-    cin >> yearBuilt;
-    cout << "Enter the towing capacity for the Truck (in pounds): ";
-    cin >> towingCapacity;
-    cin.ignore();  // Ignore newline character
+    manufacturer = getValidatedManufacturer();
+    yearBuilt = getValidatedInt("Enter the year the Truck was built: ");
+    towingCapacity = getValidatedInt("Enter the towing capacity for the Truck (in pounds): ");
     Truck truck(manufacturer, yearBuilt, towingCapacity);
     cout << "\nTruck Information:\n";
     truck.displayInfo();
